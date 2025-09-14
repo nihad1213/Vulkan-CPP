@@ -5,6 +5,10 @@
 #include <stdexcept>
 #include <cstdlib>
 
+
+const uint32_t WIDTH = 800;
+const uint32_t HEIGHT = 600;
+
 class HelloTriangleApplication {
     public:
         void run() {
@@ -16,7 +20,10 @@ class HelloTriangleApplication {
     
     private:
         void initWindow() {
-            // Window initialization code would go here
+            glfwInit();
+            glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+            glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+            GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
         }
 
         void initVulkan() {
