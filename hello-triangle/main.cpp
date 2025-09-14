@@ -19,11 +19,14 @@ class HelloTriangleApplication {
         }
     
     private:
+
+        GLFWwindow* window; 
+
         void initWindow() {
             glfwInit();
             glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
             glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-            GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+            window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
         }
 
         void initVulkan() {
@@ -31,11 +34,14 @@ class HelloTriangleApplication {
         }
 
         void mainLoop() {
-            // Main rendering loop would go here
+            while (!glfwWindowShouldClose(window)) {
+                glfwPollEvents();
+            }
         }
 
         void cleanup() {
-            // Cleanup code for Vulkan would go here
+            glfwDestroyWindow(window);
+            glfwTerminate();
         }
 };
 
