@@ -12,11 +12,11 @@ namespace ve {
             ~VulkanEngine();
 
         private:
-            GLFWwindow* window;
-
             void initWindow();
 
             const int width;
             const int height;
+            const std::string windowName;
+            GLFWwindow* window;
     };
 }

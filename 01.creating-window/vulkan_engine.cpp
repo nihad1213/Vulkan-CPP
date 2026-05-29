@@ -1,0 +1,22 @@
+#include "vulkan_engine.hpp"
+
+namespace ve {
+
+    VulkanEngine::VulkanEngine(int w, int h, std::string name) : width(w), height(h), windowName(name) {
+        initWindow();
+    }
+
+    VulkanEngine::~VulkanEngine() {
+        glfwDestroyWindow(window);
+        glfwTerminate();
+    }
+
+    void VulkanEngine::initWindow() {
+        glfwInit();
+
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
+        window = glfwCreateWindow(width, height, "Vulkan Engine", nullptr, nullptr);
+    }
+}
