@@ -10,6 +10,8 @@ namespace ve {
         public:
             VulkanEngine(int w, int h, std::string name);
             ~VulkanEngine();
+            bool shouldClose() {return glfwWindowShouldClose(window);}
+
 
         private:
             void initWindow();

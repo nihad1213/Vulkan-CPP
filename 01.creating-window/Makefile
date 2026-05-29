@@ -3,7 +3,7 @@ CXXFLAGS := -std=c++26 -Wall -Wextra -O2
 LDFLAGS  := -lglfw -lvulkan
 
 TARGET   := app
-SRCS     := main.cpp vulkan_engine.cpp
+SRCS     := main.cpp vulkan_engine.cpp first_app.cpp
 OBJS     := $(SRCS:.cpp=.o)
 
 .PHONY: all clean
