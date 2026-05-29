@@ -12,6 +12,8 @@ namespace ve {
             ~VulkanEngine();
             bool shouldClose() {return glfwWindowShouldClose(window);}
 
+            VulkanEngine(const VulkanEngine &) = delete;
+            VulkanEngine &operator = (const VulkanEngine);
 
         private:
             void initWindow();
