@@ -1,6 +1,7 @@
 #pragma once
 
 #include "vulkan_engine.hpp"
+#include "ve_pipeline.hpp"
 
 namespace ve {
     
@@ -13,5 +14,6 @@ namespace ve {
         
         private:
             VulkanEngine vulkanEngine{WIDTH, HEIGHT, "First Vulkan App"};
+            VePipeline vePipeline{"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv"};
     };
 }
