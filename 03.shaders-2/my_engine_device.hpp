@@ -1,12 +1,11 @@
 #pragma once
 
-#include "my_engine_window.hpp"
+#include "vulkan_engine.hpp"
 
-// std lib headers
 #include <string>
 #include <vector>
 
-namespace lve {
+namespace ve {
 
 struct SwapChainSupportDetails {
   VkSurfaceCapabilitiesKHR capabilities;
