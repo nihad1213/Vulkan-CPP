@@ -6,7 +6,7 @@
 #include <set>
 #include <unordered_set>
 
-namespace lve {
+namespace ve {
 
 // local callback functions
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
@@ -47,7 +47,7 @@ void DestroyDebugUtilsMessengerEXT(
 }
 
 // class member functions
-MyEngineDevice::MyEngineDevice(MyEngineWindow &window) : window{window} {
+MyEngineDevice::MyEngineDevice(VulkanEngine &window) : window{window} {
   createInstance();
   setupDebugMessenger();
   createSurface();
@@ -531,4 +531,4 @@ void MyEngineDevice::createImageWithInfo(
   }
 }
 
-}  // namespace lve
+}  // namespace ve

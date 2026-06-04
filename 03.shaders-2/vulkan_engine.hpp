@@ -11,6 +11,7 @@ namespace ve {
             VulkanEngine(int w, int h, std::string name);
             ~VulkanEngine();
             bool shouldClose() {return glfwWindowShouldClose(window);}
+            void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
 
             VulkanEngine(const VulkanEngine &) = delete;
             VulkanEngine &operator = (const VulkanEngine);

@@ -29,7 +29,7 @@ class MyEngineDevice {
   const bool enableValidationLayers = true;
 #endif
 
-  MyEngineDevice(MyEngineWindow &window);
+  MyEngineDevice(VulkanEngine &window);
   ~MyEngineDevice();
 
   // Not copyable or movable
@@ -92,7 +92,7 @@ class MyEngineDevice {
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-  MyEngineWindow &window;
+  VulkanEngine &window;
   VkCommandPool commandPool;
 
   VkDevice device_;
@@ -104,4 +104,4 @@ class MyEngineDevice {
   const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 };
 
-}  // namespace lve
+}  // namespace ve
